@@ -1,0 +1,170 @@
+### Registrarse
+POST http://localhost:4012/api/createuser
+Content-Type: application/json
+
+{
+    "username": "pedro",
+    "password": "1234"
+}
+
+### Login
+POST http://localhost:4012/api/loginuser
+Content-Type: application/json
+
+{
+    "username": "pedro",
+    "password": "1234"
+}
+
+### Crear persona (cliente Persona)
+POST http://localhost:4012/api/createperson
+Content-Type: application/json
+
+{
+    "nombre": "josh",
+    "cedula": "1212121"
+}
+
+### Crear compañia (cliente Negocio)
+POST http://localhost:4012/api/createcompany
+Content-Type: application/json
+
+{
+    "nombre": "joshBussiness",
+    "cedula": "1212121"
+}
+
+### Buscar todos los clientes 
+GET http://localhost:4012/api/findclients
+
+### Eliminar cliente
+DELETE http://localhost:4012/api/deleteclient/5fc264ef65a75a1c84e761b8
+
+### Actualizar cliente
+PUT http://localhost:4012/api/updateclient/5fc2600f65a75a1c84e761b6
+Content-Type: application/json
+
+{
+    "nombre": "josefino",
+    "cedula": "1232323",
+}
+
+### Crear producto 
+POST http://localhost:4012/api/createproduct
+Content-Type: application/json
+
+{
+    "nombre": "MackBook 2022",
+    "precioVenta": 100,
+    "precioCompra": 60,
+    "marca": "Apple",
+    "cantidad": "6"
+}
+### Crear muchos producto
+# POST http://localhost:4012/api/createmanyproducts
+# Content-Type: application/json
+
+# [
+#     {
+#         "nombre": "IMac 2020",
+#         "precioVenta": "100",
+#         "precioCompra": "60",
+#         "marca": "Apple"
+#     },
+#     {
+#         "nombre": "IMac 2019",
+#         "precioVenta": "100",
+#         "precioCompra": "60",
+#         "marca": "Apple"
+#     },
+#     {
+#         "nombre": "IMac 2019",
+#         "precioVenta": "100",
+#         "precioCompra": "60",
+#         "marca": "Apple"
+#     }
+# ]
+
+### Crear factura de gastos
+POST http://localhost:4012/api/createexpense
+Content-Type: application/json
+
+{
+    "productos": [
+        {
+            "nombre": "IMac 2020",
+            "precioVenta": 100,
+            "precioCompra": 60,
+            "marca": "Apple",
+            "cantidad": 5
+        },
+        {
+            "nombre": "IMac 2021",
+            "precioVenta": 100,
+            "precioCompra": 60,
+            "marca": "Apple",
+            "cantidad": 5
+        }
+    ],
+    "metodoPago": "Pago Movil"
+}
+
+### Actualizar producto 
+PUT http://localhost:4012/api/updateproduct/5fb5c77bb45d0029064cab43
+Content-Type: application/json
+
+{
+    "nombre": "IMac 2020",
+    "precioVenta": 100,
+    "precioCompra": 60,
+    "marca": "Apple"
+}
+
+### Actualizar factura 
+PUT http://localhost:4012/api/updatefactura/5fc3e7fb6bbc1a116d7b2322
+Content-Type: application/json
+
+{
+    "monto": "1000",
+    "metodoPago": "Pago Movil"
+}
+
+### Eliminar producto
+DELETE http://localhost:4012/api/deleteproduct/5fb5c99c33b8c22da47e6412
+
+### Buscar todos los productos
+GET http://localhost:4012/api/findproducts
+
+### Buscar facturas de gastos
+GET http://localhost:4012/api/findexpenses
+
+### Crear factura
+POST http://localhost:4012/api/createbill
+Content-Type: application/json
+
+{
+    "idPersona": "6095ec420d5a9d7543e93c03",
+    "metodoPago": "Efectivo",
+    "monto": 123465646
+}
+### agregar a caja
+POST http://localhost:4012/api/aggacaja
+Content-Type: application/json
+
+{
+    "productoId": "6095ed570d5a9d7543e93c0d",
+    "cantidad": 5
+}
+
+### Buscar caja
+GET http://localhost:4012/api/findcaja
+
+### Buscar todas las facturas
+GET http://localhost:4012/api/findbills
+
+### Buscar datos de sesión
+GET http://localhost:4012/api/session
+
+### Salir de la sesión
+GET http://localhost:4012/api/logout
+
